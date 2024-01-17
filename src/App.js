@@ -7,6 +7,8 @@ import Textarea from "./components/Textarea";
 import Alert from "./components/Alert";
 import React from "react";
 
+// THESE ARE THE PROGRAM FILES THAT ARE HOSTED THROUGH GITHUB PAGES
+
 function App() {
   const [mode, setMode] = useState("white");
   const [alertMsg, setAlertMsg] = useState(null);
