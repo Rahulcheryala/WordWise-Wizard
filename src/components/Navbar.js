@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./Navbar.css";
+// import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
   return (
@@ -10,9 +11,11 @@ export default function Navbar(props) {
         data-bs-theme={`${props.mode}`}
       >
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">
+          {/* <Link className="navbar-brand" to="/"> */}
+          <a href="/" className="navbar-brand">
             {props.title}
           </a>
+          {/* </Link> */}
           <button
             className="navbar-toggler"
             type="button"
@@ -30,12 +33,22 @@ export default function Navbar(props) {
           >
             <ul className="navbar-nav mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="/">
+                {/* <Link
+                  className="nav-link active"
+                  aria-current="page"
+                  to="/home"
+                >
+                {props.navItem1}
+                </Link> */}
+                <a href="/" className="nav-link active">
                   {props.navItem1}
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                {/* <Link className="nav-link" to="/about">
+                  About
+                </Link> */}
+                <a href="/" className="nav-link">
                   About
                 </a>
               </li>
