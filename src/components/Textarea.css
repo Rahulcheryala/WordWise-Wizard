@@ -1,0 +1,5 @@
+.form-control {
+  box-sizing: border-box;
+  border: 4px solid #dee2e6;
+  border-radius: 20px;
+}
