@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./Navbar.css";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Navbar(props) {
   return (
@@ -11,11 +11,12 @@ export default function Navbar(props) {
         data-bs-theme={`${props.mode}`}
       >
         <div className="container-fluid">
-          {/* <Link className="navbar-brand" to="/"> */}
-          <a href="/" className="navbar-brand">
+          <Link className="navbar-brand" to="/">
+            {props.title} {/*Rahul._.1973 */}
+          </Link>
+          {/* <a href="/" className="navbar-brand">
             {props.title}
-          </a>
-          {/* </Link> */}
+          </a> */}
           <button
             className="navbar-toggler"
             type="button"
@@ -33,29 +34,32 @@ export default function Navbar(props) {
           >
             <ul className="navbar-nav mb-lg-0">
               <li className="nav-item">
-                {/* <Link
+                <Link
                   className="nav-link active"
                   aria-current="page"
                   to="/home"
                 >
-                {props.navItem1}
-                </Link> */}
-                <a href="/" className="nav-link active">
                   {props.navItem1}
-                </a>
+                </Link>
+                {/* <a href="/" className="nav-link active">
+                  {props.navItem1}
+                </a> */}
               </li>
               <li className="nav-item">
-                {/* <Link className="nav-link" to="/about">
+                <Link className="nav-link" to="/about">
                   About
-                </Link> */}
-                <a href="/" className="nav-link">
+                </Link>
+                {/* <a href="/" className="nav-link">
                   About
-                </a>
+                </a> */}
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/">
+                <Link className="nav-link" to="/about">
                   Support Us
-                </a>
+                </Link>
+                {/* <a className="nav-link" href="/">
+                  Support Us
+                </a> */}
               </li>
               {/* <li className="nav-item dropdown">
                 <a

@@ -1,13 +1,10 @@
-import { useState } from "react";
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import "./App.css";
-// import About from "./components/About";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import About from "./components/About";
 import Navbar from "./components/Navbar";
 import Textarea from "./components/Textarea";
 import Alert from "./components/Alert";
-import React from "react";
-
-// THESE ARE THE PROGRAM FILES THAT ARE HOSTED THROUGH GITHUB PAGES
+import "./App.css";
 
 function App() {
   const [mode, setMode] = useState("white");
@@ -22,6 +19,7 @@ function App() {
       setAlertMsg(null);
     }, 1500);
   };
+
   const toggleMode = () => {
     if (mode === "dark") {
       setMode("white");
@@ -33,36 +31,37 @@ function App() {
       showAlertMessage("Dark mode enabled !!!", "success");
     }
   };
+
   return (
     <>
-      {/* <Router> */}
-      <Navbar
-        title="RahuL._.1973"
-        navItem1="Home"
-        mode={mode}
-        toggleMode={toggleMode}
-      />
-      <br />
-      <br />
-      <Alert message={alertMsg} />
-      <div className="container-fluid my-5 p-0 mb-0 w-100">
-        {/* <Routes>
+      <Router>
+        <Navbar
+          title="RahuL._.1973"
+          navItem1="Home"
+          mode={mode}
+          toggleMode={toggleMode}
+        />
+        <br />
+        <Alert message={alertMsg} />
+        <div className="container-fluid my-5 p-0 mb-0 w-100">
+          <Routes>
             <Route
-              exact */}
-        {/* // React uses partial matching of url's and it may cause trouble in rendering partial matched path
+              exact
+              // React uses partial matching of url's and it may cause trouble in rendering partial matched path
               // Example : /users ---> component 1
               //           /users/home ---> component 2
               //writing path = "/users/home" may lead to partial match with "/users" and component 1 is rendered onto the web-page
               // So it is always better to use exact keyword when giving a path
               path="/home"
-              element={ */}
-        <Textarea mode={mode} showAlertMessage={showAlertMessage} />
-        {/* }
+              element={
+                <Textarea mode={mode} showAlertMessage={showAlertMessage} />
+              }
             />
             <Route exact path="/about" element={<About />} />
-          </Routes> */}
-      </div>
-      {/* </Router> */}
+            <Route exact path="/about" element={<About />} />
+          </Routes>
+        </div>
+      </Router>
     </>
   );
 }

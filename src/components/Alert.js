@@ -6,10 +6,13 @@ export default function Alert(props) {
     return lower.charAt(0).toUpperCase() + lower.slice(1);
   };
   return (
-    props.message && (
-      <div className={`alert mt-2 mb-0 py-2 alert-${props.message.type}`}>
-        <strong>{capitalize(props.message.type)} :</strong> {props.message.msg}
-      </div>
-    )
+    <div style={{ height: "25px", marginTop: "33px" }}>
+      {props.message && (
+        <div className={`alert mb-0 py-2 alert-${props.message.type}`}>
+          <strong>{capitalize(props.message.type)} :</strong>{" "}
+          {props.message.msg}
+        </div>
+      )}
+    </div>
   );
 }

@@ -1,0 +1,5 @@
+{
+  "homepage": "https://Rahulcheryala.github.io/Project-1",
+
+  "scripts": { "predeploy": "npm run build", "deploy": "gh-pages -d build" }
+}

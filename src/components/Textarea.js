@@ -14,17 +14,17 @@ export default function Textarea(props) {
     // displays the text you have entered (REMEMBER IT !!!)
   };
 
-  const convertToUppercase = () => {
+  const toUppercase = () => {
     let newText = text.toUpperCase();
     setText(newText);
   };
 
-  const convertToLowercase = () => {
+  const toLowercase = () => {
     let newText = text.toLowerCase();
     setText(newText);
   };
 
-  const trimAllSpaces = () => {
+  const trimSpaces = () => {
     const trimmedString = text.replace(/\s+/g, " ");
     setText(trimmedString);
     Counter(trimmedString);
@@ -70,19 +70,10 @@ export default function Textarea(props) {
     <>
       <div className="container mt-3 px-0 d-flex w-100">
         <div className="mt-5 w-75 mx-auto">
-          <h1
-            // className={`m-0 h-auto text-${
-            //   props.mode === "dark" ? "dark" : "white"
-            // }`}
-            style={{ color: props.mode === "dark" ? "white" : "black" }}
-          >
+          <h1 style={{ color: props.mode === "dark" ? "white" : "black" }}>
             Enter the text to analyze
           </h1>
           <div className="container p-0 mt-4">
-            {/* <label
-              htmlFor="exampleFormControlTextarea1"
-              className="form-label"
-            ></label> */}
             <textarea
               className="form-control border "
               id="exampleFormControlTextarea1"
@@ -92,27 +83,26 @@ export default function Textarea(props) {
               onChange={changedTo}
             ></textarea>
           </div>
-          <div className="container d-flex mt-3 p-0">
-            <button className="btn btn-primary" onClick={convertToUppercase}>
+
+          <div className="container d-flex flex-wrap mt-3 p-0">
+            <button className="btn btn-primary ms-1 my-1" onClick={toUppercase}>
               To UPPER CASE
             </button>
-            <button
-              className="btn btn-primary ms-2"
-              onClick={convertToLowercase}
-            >
+            <button className="btn btn-primary ms-1 my-1" onClick={toLowercase}>
               To LOWER CASE
             </button>
-            <button className="btn btn-primary ms-2" onClick={trimAllSpaces}>
-              Trim ALL SPACES
+            <button className="btn btn-primary ms-1 my-1" onClick={trimSpaces}>
+              Trim SPACES
             </button>
-            <button className="btn btn-primary ms-2" onClick={clearText}>
+            <button className="btn btn-primary ms-1 my-1" onClick={clearText}>
               Clear Text
             </button>
-            <button className="btn btn-primary ms-2" onClick={copyText}>
+            <button className="btn btn-primary ms-1 my-1" onClick={copyText}>
               Copy to Clip Board
             </button>
           </div>
         </div>
+
         <div className="container mt-5 ps-4 w-25 p-0">
           <h3 className={`text-${props.mode === "dark" ? "white" : "black"}`}>
             Your text Summary
