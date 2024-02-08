@@ -38,7 +38,7 @@ export default function Textarea(props) {
 
   const copyText = () => {
     let newText = document.getElementById("exampleFormControlTextarea1");
-    newText.select();
+    // newText.select();
     navigator.clipboard.writeText(newText.value);
     props.showAlertMessage("Copied to Clipboard", "primary");
   };
@@ -68,7 +68,7 @@ export default function Textarea(props) {
   };
   return (
     <>
-      <div className="container mt-3 px-0 d-flex w-100">
+      <div className="container mt-3 px-0 d-flex flex-wrap w-100">
         <div className="mt-5 w-75 mx-auto">
           <h1 style={{ color: props.mode === "dark" ? "white" : "black" }}>
             Enter the text to analyze
@@ -85,25 +85,45 @@ export default function Textarea(props) {
           </div>
 
           <div className="container d-flex flex-wrap mt-3 p-0">
-            <button className="btn btn-primary ms-1 my-1" onClick={toUppercase}>
+            <button
+              className="btn btn-primary ms-1 my-1"
+              onClick={toUppercase}
+              disabled={text.length === 0}
+            >
               To UPPER CASE
             </button>
-            <button className="btn btn-primary ms-1 my-1" onClick={toLowercase}>
+            <button
+              className="btn btn-primary ms-1 my-1"
+              onClick={toLowercase}
+              disabled={text.length === 0}
+            >
               To LOWER CASE
             </button>
-            <button className="btn btn-primary ms-1 my-1" onClick={trimSpaces}>
+            <button
+              className="btn btn-primary ms-1 my-1"
+              onClick={trimSpaces}
+              disabled={text.length === 0}
+            >
               Trim SPACES
             </button>
-            <button className="btn btn-primary ms-1 my-1" onClick={clearText}>
+            <button
+              className="btn btn-primary ms-1 my-1"
+              onClick={clearText}
+              disabled={text.length === 0}
+            >
               Clear Text
             </button>
-            <button className="btn btn-primary ms-1 my-1" onClick={copyText}>
+            <button
+              className="btn btn-primary ms-1 my-1"
+              onClick={copyText}
+              disabled={text.length === 0}
+            >
               Copy to Clip Board
             </button>
           </div>
         </div>
 
-        <div className="container mt-5 ps-4 w-25 p-0">
+        <div className="container d-flex flex-wrap mt-5 ps-4 w-25 p-0">
           <h3 className={`text-${props.mode === "dark" ? "white" : "black"}`}>
             Your text Summary
           </h3>
