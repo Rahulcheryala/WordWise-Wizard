@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import About from "./components/About";
 import Navbar from "./components/Navbar";
 import Textarea from "./components/Textarea";
@@ -45,6 +50,7 @@ function App() {
         <Alert message={alertMsg} />
         <div className="container-fluid my-5 p-0 mb-0 w-100">
           <Routes>
+            <Route path="/" element={<Navigate replace to="/home" />} />
             <Route
               exact
               // React uses partial matching of url's and it may cause trouble in rendering partial matched path
@@ -57,7 +63,6 @@ function App() {
                 <Textarea mode={mode} showAlertMessage={showAlertMessage} />
               }
             />
-            <Route exact path="/about" element={<About />} />
             <Route exact path="/about" element={<About />} />
           </Routes>
         </div>
